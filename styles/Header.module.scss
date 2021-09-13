@@ -1,0 +1,24 @@
+@use "./variables.scss";
+
+.container {
+  height: 70px;
+  padding: 20px 10px;
+  border-bottom: 1px solid variables.$grey2;
+  font-family: variables.$article-font;
+}
+
+.searchContainer {
+  position: absolute;
+  left: 85px;
+  top: 20px;
+}
+
+.logoContainer {
+  position: absolute;
+  top: 20px;
+  left: calc(50% - 200px);
+}
+
+.logo {
+  width: 350px;
+}

@@ -1,0 +1,33 @@
+@use "./variables.scss";
+
+.search {
+  border: none;
+  border-bottom: 1px solid variables.$grey2;
+  background-color: transparent;
+  font-family: variables.$article-font;
+  color: variables.$grey;
+  padding: 5px;
+
+  &:focus {
+    outline: none;
+    border-bottom: 1px solid variables.$meta-red;
+  }
+
+  ::placeholder {
+    color: variables.$grey2; //doesnt work
+  }
+}
+
+.button {
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  background-color: variables.$grey3;
+  color: variables.$white;
+  margin-left: 10px;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
