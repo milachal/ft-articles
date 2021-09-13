@@ -1,8 +1,18 @@
 export interface HomeProps {
-  data: any;
+  articles: any;
 }
 
 export interface HomeArticleProps {
-  title: string,
-  body: string
+  meta: string,
+  title: string
+  standfirst: string,
+  image: string,
+}
+
+export interface HomeArticleResponse {
+  meta: string,
+  title: string
+  standfirst: string,
+  image: string,
+  id: string,
 }
