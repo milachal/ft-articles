@@ -1,24 +1,27 @@
+@use './variables.scss';
+
 .homeArticleContainer {
   width: 200px;
   padding: 10px;
   display: inline-block;
-  font-family: MetricWeb,sans-serif;
-  font-size: 14px;
-  line-height: 16px;
+  font-family: variables.$article-font;
+  font-size: variables.$font-size1;
+  line-height: variables.$line-height1;
   margin-bottom: 16px;
+}
 
-}
 .meta {
-  font-family: MetricWeb,sans-serif;
-  font-size: 16px;
-  line-height: 20px;
-  color: #990f3d;
+  font-family: variables.$article-font;
+  font-size: variables.$font-size2;
+  line-height: variables.$line-height2;
+  color: variables.$meta-red;
 }
+
 .title {
-  font-family: FinancierDisplayWeb,serif;
-  font-size: 20px;
-  line-height: 24px;
-  color: #000;
+  font-family: variables.$title-font;
+  font-size: variables.$font-size3;
+  line-height: variables.$line-height3;
+  color: variables.$black;
   margin-top: 0;
   margin-bottom: 0;
   font-weight: 400;
@@ -30,7 +33,7 @@
 
 .standfirst {
   margin-top: 10px;
-  font-size: 16px;
-  line-height: 20px;
-  color: #66605c;
+  font-size: variables.$font-size2;
+  line-height: variables.$line-height2;
+  color: variables.$grey;
 }
