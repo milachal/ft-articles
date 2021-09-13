@@ -2,25 +2,29 @@ import React, { ReactElement } from "react";
 import { GetServerSideProps } from "next";
 import styles from "../styles/Home.module.scss";
 import instance from "../axiosInstance";
+import Header from "../components/header";
 import HomeArticle from "../components/home-article";
 import { HomeProps, HomeArticleResponse } from "../types";
 
 const Home = ({ articles }: HomeProps): ReactElement => {
   return (
-    <div className={styles.homePageArticleContainer}>
-      {articles.map((article: HomeArticleResponse) => {
-        return (
-          <span key={article.id}>
-            <HomeArticle
-              image={article.image}
-              meta={article.meta}
-              title={article.title}
-              standfirst={article.standfirst}
-            />
-          </span>
-        );
-      })}
-    </div>
+    <>
+      <Header />
+      <div className={styles.homePageArticleContainer}>
+        {articles.map((article: HomeArticleResponse) => {
+          return (
+            <span key={article.id}>
+              <HomeArticle
+                image={article.image}
+                meta={article.meta}
+                title={article.title}
+                standfirst={article.standfirst}
+              />
+            </span>
+          );
+        })}
+      </div>
+    </>
   );
 };
 
@@ -38,7 +42,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
   const getArticlesData = async (id: string) => {
     const response = await instance.get(
-      `${id}?apiKey=${process.env.FT_API_KEY}`
+      `enrichedcontent/${id}?apiKey=${process.env.FT_API_KEY}`
     );
     return {
       meta: response.data.annotations[3].prefLabel,

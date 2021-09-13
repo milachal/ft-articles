@@ -29,7 +29,7 @@
       "@typescript-eslint",
       "react-hooks"  
     ],
-  "ignorePatterns": ["src/styles/*.scss"],
+  "ignorePatterns": ["*.scss"],
   "rules": {
       "quotes": [2, "double"],
       "no-use-before-define": "off",

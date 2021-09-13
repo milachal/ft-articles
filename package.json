@@ -15,12 +15,11 @@
     "next": "11.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "sass": "^1.39.2",
-    "xml2js": "^0.4.23"
+    "sass": "^1.39.2"
   },
   "devDependencies": {
+    "@types/node": "^16.9.1",
     "@types/react": "17.0.20",
-    "@types/xml2js": "^0.4.9",
     "@typescript-eslint/eslint-plugin": "^4.31.0",
     "eslint": "7.32.0",
     "eslint-config-airbnb": "^18.2.1",
