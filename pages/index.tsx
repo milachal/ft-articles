@@ -4,14 +4,14 @@ import styles from "../styles/Home.module.scss";
 import instance from "../axiosInstance";
 import Header from "../components/header";
 import HomeArticle from "../components/home-article";
-import { HomeProps, HomeArticleResponse } from "../types";
+import { HomeProps, GetArticleResponse } from "../types";
 
 const Home = ({ articles }: HomeProps): ReactElement => {
   return (
     <>
       <Header />
       <div className={styles.homePageArticleContainer}>
-        {articles.map((article: HomeArticleResponse) => {
+        {articles.map((article: GetArticleResponse) => {
           return (
             <span key={article.id}>
               <HomeArticle
@@ -45,10 +45,10 @@ export const getServerSideProps: GetServerSideProps = async () => {
       `enrichedcontent/${id}?apiKey=${process.env.FT_API_KEY}`
     );
     return {
-      meta: response.data.annotations[3].prefLabel,
+      meta: response.data.annotations?.[0]?.prefLabel,
       title: response.data.title,
       standfirst: response.data.standfirst,
-      image: response.data.mainImage.members[0].binaryUrl,
+      image: response.data.mainImage.members?.[0]?.binaryUrl,
       id: response.data.id
     };
   };
