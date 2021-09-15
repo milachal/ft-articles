@@ -18,7 +18,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<any> 
         );
 
         const suggestionsIds = searchData.data.results[0].results || [];
-
         const suggestionsIdsArr = suggestionsIds.map((suggestion: SuggestionResult) => {
           return suggestion.id;
         });
@@ -27,6 +26,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<any> 
           const response = await instance.get(
             `enrichedcontent/${id}?apiKey=${process.env.FT_API_KEY}`
           );
+
           return {
             meta: response.data.annotations?.[0]?.prefLabel,
             title: response.data.title,
