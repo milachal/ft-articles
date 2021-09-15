@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 import { GetServerSideProps } from "next";
-import styles from "../styles/Home.module.scss";
+import styles from "../styles/home.module.scss";
 import instance from "../axiosInstance";
 import Header from "../components/header";
 import HomeArticle from "../components/home-article";

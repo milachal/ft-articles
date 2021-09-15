@@ -1,0 +1,32 @@
+@use "./variables.scss";
+
+.suggestionsContainer {
+  position: absolute;
+  top: 30px;
+  right: -100px;
+  border: 1px solid variables.$grey;
+  border-bottom: none;
+  background-color: variables.$grey2;
+}
+
+.suggestionContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  border-bottom: 1px solid variables.$grey;
+}
+
+.imageContainer {
+  max-width: 100px;
+}
+
+.image {
+  width: 100%;
+}
+
+.title {
+  font-size: 13px;
+  font-family: variables.$article-font;
+  color: variables.$black;
+}
