@@ -1,6 +1,6 @@
 import React, { ReactElement, useState } from "react";
 import axios from "axios";
-import styles from "../styles/Search.module.scss";
+import styles from "../styles/searchBar.module.scss";
 import { GetArticleResponse } from "../types";
 import SearchSuggestion from "./search-suggestion";
 
