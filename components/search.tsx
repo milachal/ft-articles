@@ -1,6 +1,6 @@
 import React, { ReactElement, useState } from "react";
 import axios from "axios";
-import styles from "../styles/Search.module.scss";
+import styles from "../styles/search.module.scss";
 import { GetArticleResponse } from "../types";
 import SearchSuggestion from "./search-suggestion";
 
@@ -22,7 +22,7 @@ const Search = (): ReactElement => {
   };
 
   return (
-    <>
+    <div>
       <input
         className={styles.search}
         placeholder="search..."
@@ -30,7 +30,7 @@ const Search = (): ReactElement => {
         value={query}
       />
       <SearchSuggestion suggestions={results} />
-    </>
+    </div>
   );
 };
 

@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import styles from "../styles/HomeArticle.module.scss";
+import styles from "../styles/home-article.module.scss";
 import { HomeArticleProps } from "../types";
 
 const HomeArticle = ({
