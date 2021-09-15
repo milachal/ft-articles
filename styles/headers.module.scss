@@ -8,17 +8,16 @@
 }
 
 .searchContainer {
-  position: absolute;
-  left: 77px;
-  top: 20px;
+  float: left;
+  margin-left: 76px;
 }
 
 .logoContainer {
-  position: absolute;
-  top: 20px;
-  left: calc(50% - 200px);
+  display: flex;
+  justify-content: center;
 }
 
 .logo {
   width: 350px;
+  margin-right: 50px;
 }
