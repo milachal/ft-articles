@@ -1,12 +1,13 @@
 import React, { ReactElement, useState } from "react";
 import axios from "axios";
-import styles from "../styles/search.module.scss";
+import styles from "../styles/Search.module.scss";
 import { GetArticleResponse } from "../types";
 import SearchSuggestion from "./search-suggestion";
 
 const Search = (): ReactElement => {
   const [query, setQuery] = useState<string>("");
   const [results, setResults] = useState<GetArticleResponse[]>([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
 
   const onChangeHandler = async (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
@@ -19,6 +20,7 @@ const Search = (): ReactElement => {
       }
     );
     setResults(res.data.articles);
+    setShowSuggestions(true);
   };
 
   return (
@@ -29,7 +31,12 @@ const Search = (): ReactElement => {
         onChange={onChangeHandler}
         value={query}
       />
-      <SearchSuggestion suggestions={results} />
+      {showSuggestions && results?.length > 0 ? (
+        <SearchSuggestion
+          suggestions={results}
+          setShowSuggestions={setShowSuggestions}
+        />
+      ) : null}
     </div>
   );
 };

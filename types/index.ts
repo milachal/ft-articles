@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react";
+
 export interface HomeProps {
   articles: any;
 }
@@ -18,7 +20,8 @@ export interface GetArticleResponse {
 }
 
 export interface SuggestionsProps {
-  suggestions: GetArticleResponse[]
+  suggestions: GetArticleResponse[],
+  setShowSuggestions: Dispatch<SetStateAction<boolean>>
 }
 
 export interface SuggestionResult {
