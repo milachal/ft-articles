@@ -14,11 +14,25 @@
   &:focus {
     outline: none;
     border-bottom: 1px solid variables.$meta-red;
-    width: 400px;
+    width: 200px;
   }
 
   ::placeholder {
     color: variables.$grey2; //doesnt work
+  }
+
+  @media screen and (max-width: variables.$bpTablet) {
+    width: 80px;
+
+    &:focus {
+      width: 150px;
+      margin-right: 10px;
+    }
+  }
+
+  @media screen and (max-width: variables.$bpMobile) {
+    width: 50px;
+    margin-right: 10px;
   }
 }
 

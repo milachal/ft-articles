@@ -5,11 +5,12 @@
   padding: 20px 10px;
   border-bottom: 1px solid variables.$grey2;
   font-family: variables.$article-font;
+  // text-align: center;
 }
 
 .searchContainer {
   float: left;
-  margin-left: 76px;
+  margin-left: 5%;
 }
 
 .logoContainer {
@@ -19,5 +20,9 @@
 
 .logo {
   width: 350px;
-  margin-right: 50px;
+  margin-left: -175px;
+
+  @media screen and (max-width: variables.$bpTablet) {
+    margin-left: 0;
+  }
 }
