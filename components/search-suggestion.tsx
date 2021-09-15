@@ -1,4 +1,5 @@
 import React, { ReactElement, useEffect, useRef } from "react";
+import Link from "next/link";
 import styles from "../styles/search-suggestion.module.scss";
 import { SuggestionsProps, GetArticleResponse } from "../types";
 
@@ -26,19 +27,25 @@ const SearchSuggestion = ({
       ref={wrapperRef}
     >
       {suggestions?.map((suggestion: GetArticleResponse) => {
+        const id = suggestion.id.split("/thing/");
         return (
           <div
-            key={suggestion.id}
+            key={id[1]}
             className={styles.suggestionContainer}
           >
-            <div className={styles.title}>{suggestion.title}</div>
-            <div className={styles.imageContainer}>
-              <img
-                className={styles.image}
-                src={suggestion.image}
-                alt="article"
-              />
-            </div>
+            {/* eslint-disable jsx-a11y/anchor-is-valid */}
+            <Link href={`/article/${id[1]}`}>
+              <a>
+                <div className={styles.title}>{suggestion.title}</div>
+                <div className={styles.imageContainer}>
+                  <img
+                    className={styles.image}
+                    src={suggestion.image}
+                    alt="article"
+                  />
+                </div>
+              </a>
+            </Link>
           </div>
         );
       })}

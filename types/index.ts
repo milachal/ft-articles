@@ -30,3 +30,14 @@ export interface SuggestionResult {
   id: string,
   modelVersion: string
 }
+
+export interface ArticlePageProps {
+  article: {
+    meta: string,
+    title: string,
+    standfirst: string,
+    body: string,
+    image: string,
+    id: string
+  }
+}
