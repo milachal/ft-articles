@@ -23,29 +23,24 @@ const ArticlePage = ({ article }: ArticlePageProps): ReactElement => {
 
 export default ArticlePage;
 
-/* eslint-disable consistent-return */
 export const getServerSideProps:
   GetServerSideProps = async (context: GetServerSidePropsContext) => {
-    try {
-      const response = await instance.get(
-        `enrichedcontent/${context.params.id}?apiKey=${process.env.FT_API_KEY}`
-      );
+    const response = await instance.get(
+      `enrichedcontent/${context.params.id}?apiKey=${process.env.FT_API_KEY}`
+    );
 
-      return (
-        {
-          props: {
-            article: {
-              meta: response.data.annotations?.[0]?.prefLabel,
-              title: response.data.title,
-              standfirst: response.data.standfirst,
-              body: response.data.bodyXML,
-              image: response.data.mainImage.members?.[0]?.binaryUrl,
-              id: response.data.id
-            }
+    return (
+      {
+        props: {
+          article: {
+            meta: response.data.annotations?.[0]?.prefLabel,
+            title: response.data.title,
+            standfirst: response.data.standfirst,
+            body: response.data.bodyXML,
+            image: response.data.mainImage.members?.[0]?.binaryUrl,
+            id: response.data.id
           }
         }
-      );
-    } catch (e) {
-      console.log(e);
-    }
+      }
+    );
   };
