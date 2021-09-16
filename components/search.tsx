@@ -1,4 +1,7 @@
-import React, { ReactElement, useState } from "react";
+import React, {
+  ReactElement, useState, useMemo
+} from "react";
+import debounce from "lodash.debounce";
 import axios from "axios";
 import styles from "../styles/searchBar.module.scss";
 import { GetArticleResponse } from "../types";
@@ -8,19 +11,32 @@ const Search = (): ReactElement => {
   const [query, setQuery] = useState<string>("");
   const [results, setResults] = useState<GetArticleResponse[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
-
-  const onChangeHandler = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    setQuery(e.target.value);
+  console.log(query);
+  const callApi = async (value: string) => {
     const res = await axios.post(
       "/api/search", {
-        queryString: `${e.target.value}`,
+        queryString: `${value}`,
         queryContext: {
           curations: ["ARTICLES"]
         }
       }
     );
-    setResults(res.data.articles);
-    setShowSuggestions(true);
+    if (value !== "") {
+      setResults(res.data.articles);
+      setShowSuggestions(true);
+    }
+  };
+
+  const delayedApiCall = useMemo(() => debounce(callApi, 300), []);
+
+  const onChangeHandler = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value, "event");
+    setQuery(e.target.value);
+    if (e.target.value !== "") {
+      delayedApiCall(e.target.value);
+    } else {
+      setShowSuggestions(false);
+    }
   };
 
   return (
