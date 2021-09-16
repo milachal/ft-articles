@@ -23,6 +23,7 @@ const ArticlePage = ({ article }: ArticlePageProps): ReactElement => {
 
 export default ArticlePage;
 
+/* eslint-disable consistent-return */
 export const getServerSideProps:
   GetServerSideProps = async (context: GetServerSidePropsContext) => {
     try {

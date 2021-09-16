@@ -37,15 +37,15 @@ const SearchSuggestion = ({
             <Link href={`/article/${id[1]}`}>
               <a>
                 <div className={styles.title}>{suggestion.title}</div>
-                <div className={styles.imageContainer}>
-                  <img
-                    className={styles.image}
-                    src={suggestion.image}
-                    alt="article"
-                  />
-                </div>
               </a>
             </Link>
+            <div className={styles.imageContainer}>
+              <img
+                className={styles.image}
+                src={suggestion.image}
+                alt="article"
+              />
+            </div>
           </div>
         );
       })}
