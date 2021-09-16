@@ -55,7 +55,8 @@
       "react/jsx-props-no-spreading": "off",
       "@typescript-eslint/no-explicit-any": "off" ,
       "comma-dangle": ["error", "never"],
-      "@next/next/no-img-element": "off"
+      "@next/next/no-img-element": "off",
+      "react/no-danger": "off"
     },
   "settings": {
           "import/resolver": {
