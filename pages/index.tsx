@@ -1,5 +1,6 @@
 import React, { ReactElement } from "react";
 import { GetServerSideProps } from "next";
+import Link from "next/link";
 import styles from "../styles/home.module.scss";
 import instance from "../axiosInstance";
 import Header from "../components/header";
@@ -14,12 +15,17 @@ const Home = ({ articles }: HomeProps): ReactElement => {
         {articles.map((article: GetArticleResponse) => {
           return (
             <span key={article.id}>
-              <HomeArticle
-                image={article.image}
-                meta={article.meta}
-                title={article.title}
-                standfirst={article.standfirst}
-              />
+              <Link href={`/article/${article.id.split("/thing/")[1]}`}>
+                {/* eslint-disable jsx-a11y/anchor-is-valid */}
+                <a>
+                  <HomeArticle
+                    image={article.image}
+                    meta={article.meta}
+                    title={article.title}
+                    standfirst={article.standfirst}
+                  />
+                </a>
+              </Link>
             </span>
           );
         })}
