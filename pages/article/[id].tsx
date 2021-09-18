@@ -3,10 +3,9 @@ import { GetServerSideProps, GetServerSidePropsContext } from "next";
 import instance from "../../axiosInstance";
 import styles from "../../styles/article-page.module.scss";
 import { ArticlePageProps } from "../../types";
-import Header from "../../components/header";
+import Header from "../../components/header/header";
 
 const ArticlePage = ({ article }: ArticlePageProps): ReactElement => {
-  console.log(article.body);
   return (
     <div>
       <Header />
