@@ -3,8 +3,8 @@ import { GetServerSideProps } from "next";
 import Link from "next/link";
 import styles from "../styles/home.module.scss";
 import instance from "../axiosInstance";
-import Header from "../components/header";
-import HomeArticle from "../components/home-article";
+import Header from "../components/header/header";
+import HomeArticle from "../components/home-article/home-article";
 import { HomeProps, GetArticleResponse } from "../types";
 
 const Home = ({ articles }: HomeProps): ReactElement => {

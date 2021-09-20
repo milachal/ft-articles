@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should render correctly 1`] = `
+<div>
+  <div>
+    <Search />
+  </div>
+  <Link
+    href="/"
+  >
+    <a>
+      <div>
+        <img
+          alt="financial-times-logo"
+          src="https://www.ft.com/__origami/service/image/v2/images/raw/ftlogo:brand-ft-masthead?format=svg&source=page-kit-layout&tint=%2333302E%2C%2333302E"
+        />
+      </div>
+    </a>
+  </Link>
+</div>
+`;
