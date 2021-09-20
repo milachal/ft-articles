@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home article should render correctly 1`] = `
+<div>
+  <img
+    alt="article"
+    src="url"
+  />
+  <div>
+    meta
+  </div>
+  <div>
+    Some title
+  </div>
+  <div>
+    standfirst
+  </div>
+</div>
+`;
