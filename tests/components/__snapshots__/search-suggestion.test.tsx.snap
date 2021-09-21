@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchSuggestion component tests if components is rendered correctly 1`] = `
+<div>
+  <div
+    key="id"
+  >
+    <Link
+      href="/article/id"
+    >
+      <a>
+        <div>
+          title
+        </div>
+      </a>
+    </Link>
+    <div>
+      <img
+        alt="article"
+        src="url"
+      />
+    </div>
+  </div>
+</div>
+`;

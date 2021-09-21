@@ -20,7 +20,7 @@ module.exports = {
     "ts-jest": {
       tsconfig: "<rootDir>/tsconfig.jest.json",
       diagnostics: {
-        ignoreCodes: ["TS2769"]
+        ignoreCodes: ["TS2769", "TS2339"]
       }
     }
   }

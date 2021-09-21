@@ -12,9 +12,9 @@ const HomeArticle = ({
         src={image}
         alt="article"
       />
-      <div className={styles.meta}>{meta}</div>
-      <div className={styles.title}>{title}</div>
-      <div className={styles.standfirst}>{standfirst}</div>
+      <div className={styles.meta} data-testid="meta">{meta}</div>
+      <div className={styles.title} data-testid="title">{title}</div>
+      <div className={styles.standfirst} data-testid="standfirst">{standfirst}</div>
     </div>
   );
 };

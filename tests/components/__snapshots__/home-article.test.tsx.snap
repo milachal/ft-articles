@@ -6,13 +6,19 @@ exports[`Home article should render correctly 1`] = `
     alt="article"
     src="url"
   />
-  <div>
+  <div
+    data-testid="meta"
+  >
     meta
   </div>
-  <div>
+  <div
+    data-testid="title"
+  >
     Some title
   </div>
-  <div>
+  <div
+    data-testid="standfirst"
+  >
     standfirst
   </div>
 </div>

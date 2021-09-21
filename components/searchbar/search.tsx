@@ -28,7 +28,7 @@ const Search = (): ReactElement => {
 
   const delayedApiCall = useMemo(() => debounce(callApi, 300), []);
 
-  const onChangeHandler = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
     if (e.target.value !== "") {
       delayedApiCall(e.target.value);
@@ -36,7 +36,6 @@ const Search = (): ReactElement => {
       setShowSuggestions(false);
     }
   };
-
   return (
     <div>
       <input
