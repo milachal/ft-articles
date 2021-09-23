@@ -1,0 +1,10 @@
+@use '../styles/variables.scss';
+
+.errorContainer {
+  margin: 30px;
+  color: variables.$meta-red;
+}
+
+.errorMessage {
+  color: variables.$grey3;
+}
