@@ -22,4 +22,14 @@ describe("SearchSuggestion component", () => {
   it("tests if components is rendered correctly", () => {
     expect(wrapper).toMatchSnapshot();
   });
+
+  it("should test component content", () => {
+    const title = wrapper.find("[data-testid=\"title\"]");
+    const image = wrapper.find("[data-testid=\"image\"]");
+
+    expect(title.exists()).toBe(true);
+    expect(title.text()).toBe("title");
+    expect(image.exists()).toBe(true);
+    expect(image.prop("src")).toEqual("url");
+  });
 });

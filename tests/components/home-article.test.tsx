@@ -26,8 +26,18 @@ describe("Home article", () => {
   });
 
   it("should test component content", () => {
-    expect(wrapper.find(`[data-testid="meta"]`).text()).toBe("meta");
-    expect(wrapper.find(`[data-testid="title"]`).text()).toBe("Some title");
-    expect(wrapper.find(`[data-testid="standfirst"]`).text()).toBe("standfirst");
+    /* eslint-disable quotes */
+    const meta = wrapper.find(`[data-testid="meta"]`);
+    const title = wrapper.find(`[data-testid="title"]`);
+    const standfirst = wrapper.find(`[data-testid="standfirst"]`);
+
+    expect(meta.exists()).toBe(true);
+    expect(meta.text()).toBe("meta");
+
+    expect(title.exists()).toBe(true);
+    expect(title.text()).toBe("Some title");
+
+    expect(standfirst.exists()).toBe(true);
+    expect(standfirst.text()).toBe("standfirst");
   });
 });
