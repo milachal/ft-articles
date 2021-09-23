@@ -36,12 +36,13 @@ const SearchSuggestion = ({
             {/* eslint-disable jsx-a11y/anchor-is-valid */}
             <Link href={`/article/${id[1]}`}>
               <a>
-                <div className={styles.title}>{suggestion.title}</div>
+                <div className={styles.title} data-testid="title">{suggestion.title}</div>
               </a>
             </Link>
             <div className={styles.imageContainer}>
               <img
                 className={styles.image}
+                data-testid="image"
                 src={suggestion.image}
                 alt="article"
               />

@@ -1,18 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home article should render correctly 1`] = `
+exports["Home article should render correctly 1"] = `
 <div>
   <img
     alt="article"
     src="url"
   />
-  <div>
+  <div
+    data-testid="meta"
+  >
     meta
   </div>
-  <div>
+  <div
+    data-testid="title"
+  >
     Some title
   </div>
-  <div>
+  <div
+    data-testid="standfirst"
+  >
     standfirst
   </div>
 </div>
