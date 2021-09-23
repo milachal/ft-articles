@@ -32,22 +32,38 @@ export default ArticlePage;
 
 export const getServerSideProps:
   GetServerSideProps = async (context: GetServerSidePropsContext) => {
-    const response = await instance.get(
-      `enrichedcontent/${context.params.id}?apiKey=${process.env.FT_API_KEY}`
-    );
-
-    return (
-      {
-        props: {
-          article: {
-            meta: response.data.annotations?.[0]?.prefLabel,
-            title: response.data.title,
-            standfirst: response.data.standfirst,
-            body: response.data.bodyXML,
-            image: response.data.mainImage.members?.[0]?.binaryUrl,
-            id: response.data.id
+    try {
+      const response = await instance.get(
+        `enrichedcontent/${context?.params?.id}?apiKey=${process.env.FT_API_KEY}`
+      );
+      console.log(response.status);
+      return (
+        {
+          props: {
+            article: {
+              meta: response.data.annotations?.[0]?.prefLabel,
+              title: response.data.title,
+              standfirst: response.data.standfirst,
+              body: response.data.bodyXML,
+              image: response.data.mainImage.members?.[0]?.binaryUrl,
+              id: response.data.id
+            }
           }
         }
+      );
+    } catch (e: any) {
+      console.log(e.response.status, "error------");
+      if (e.response.status === 404) {
+        return {
+          redirect: {
+            destination: "/404"
+          }
+        };
       }
-    );
+      return {
+        redirect: {
+          destination: "/unavailable"
+        }
+      };
+    }
   };
