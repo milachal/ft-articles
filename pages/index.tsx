@@ -2,7 +2,7 @@ import React, { ReactElement } from "react";
 import { GetServerSideProps } from "next";
 import Link from "next/link";
 import styles from "../styles/home.module.scss";
-import instance from "../axiosInstance";
+import { getArticlesData } from "../utils";
 import Header from "../components/header";
 import HomeArticle from "../components/home-article";
 import { HomeProps, GetArticleResponse } from "../types";
@@ -46,22 +46,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
       "ac5e5ef8-bccb-482b-9f8d-0dab5cac6f9a", "1db3d119-ac9f-4948-b43b-29bb136eb2d5"
     ];
 
-    const getArticlesData = async (id: string) => {
-      const response = await instance.get(
-        `enrichedcontent/${id}?apiKey=${process.env.FT_API_KEY}`
-      );
-      return {
-        meta: response.data.annotations?.[0]?.prefLabel,
-        title: response.data.title,
-        standfirst: response.data.standfirst,
-        image: response.data.mainImage.members?.[0]?.binaryUrl,
-        id: response.data.id
-      };
-    };
-
-    const articles = await Promise.all(
-      articleIdsArr.map(getArticlesData)
-    );
+    const articles = await getArticlesData(undefined, undefined, articleIdsArr);
 
     return {
       props: {

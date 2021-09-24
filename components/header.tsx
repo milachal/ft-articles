@@ -14,7 +14,6 @@ const Header = (): ReactElement => {
         <a>
           <div className={styles.logoContainer}>
             <img
-              className={styles.logo}
               src="https://www.ft.com/__origami/service/image/v2/images/raw/ftlogo:brand-ft-masthead?format=svg&source=page-kit-layout&tint=%2333302E%2C%2333302E"
               alt="financial-times-logo"
             />

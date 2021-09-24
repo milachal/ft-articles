@@ -2,25 +2,22 @@
 
 import { NextApiRequest, NextApiResponse } from "next";
 import { SuggestionResult } from "../../types";
-import { getArticlesData, getSearchSuggestionsData } from "./utils";
+import { getSearchSuggestionsData, getArticlesData } from "../../utils";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<any> => {
   const { body } = req;
 
   if (body.queryString) {
     try {
-      const searchSuggestionsData = await getSearchSuggestionsData(
+      const suggestionsData = await getSearchSuggestionsData(
         body.queryString, body.queryContext
       );
-      const suggestionsIds = searchSuggestionsData.data.results[0].results || [];
-      const suggestionsIdsArr = suggestionsIds.map((suggestion: SuggestionResult) => {
+
+      const suggestionsIdsArr = suggestionsData.map((suggestion: SuggestionResult) => {
         return suggestion.id;
       });
 
-      const articles = await Promise.all(
-        suggestionsIdsArr.slice(0, 9).map(getArticlesData)
-      );
-
+      const articles = await getArticlesData(0, 9, suggestionsIdsArr);
       return res.json({
         articles
       });
