@@ -41,3 +41,7 @@ export interface ArticlePageProps {
     id: string
   }
 }
+
+export interface QueryContext {
+  curations: string[]
+}

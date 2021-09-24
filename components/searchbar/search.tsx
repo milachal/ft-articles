@@ -3,7 +3,7 @@ import React, {
 } from "react";
 import debounce from "lodash.debounce";
 import axios from "axios";
-import styles from "./searchBar.module.scss";
+import styles from "../../styles/searchBar.module.scss";
 import { GetArticleResponse } from "../../types";
 import SearchSuggestion from "./search-suggestion";
 

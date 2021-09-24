@@ -1,6 +1,6 @@
 import React, { ReactElement, useEffect, useRef } from "react";
 import Link from "next/link";
-import styles from "./search-suggestion.module.scss";
+import styles from "../../styles/search-suggestion.module.scss";
 import { SuggestionsProps, GetArticleResponse } from "../../types";
 
 const SearchSuggestion = ({

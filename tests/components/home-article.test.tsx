@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow, ShallowWrapper } from "enzyme";
-import HomeArticle from "../../components/home-article/home-article";
+import HomeArticle from "../../components/home-article";
 import { HomeArticleProps } from "../../types";
 
 const initialProps: HomeArticleProps = {

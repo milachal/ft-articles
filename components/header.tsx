@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import Link from "next/link";
-import styles from "./header.module.scss";
-import Search from "../searchbar/search";
+import styles from "../styles/header.module.scss";
+import Search from "./searchbar/search";
 
 const Header = (): ReactElement => {
   return (

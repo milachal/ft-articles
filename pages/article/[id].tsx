@@ -3,7 +3,7 @@ import { GetServerSideProps, GetServerSidePropsContext } from "next";
 import instance from "../../axiosInstance";
 import styles from "../../styles/article-page.module.scss";
 import { ArticlePageProps } from "../../types";
-import Header from "../../components/header/header";
+import Header from "../../components/header";
 
 const ArticlePage = ({ article }: ArticlePageProps): ReactElement => {
   return (
@@ -36,7 +36,6 @@ export const getServerSideProps:
       const response = await instance.get(
         `enrichedcontent/${context?.params?.id}?apiKey=${process.env.FT_API_KEY}`
       );
-      console.log(response.status);
       return (
         {
           props: {
@@ -52,7 +51,6 @@ export const getServerSideProps:
         }
       );
     } catch (e: any) {
-      console.log(e.response.status, "error------");
       if (e.response.status === 404) {
         return {
           redirect: {
