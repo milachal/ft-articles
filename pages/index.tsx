@@ -16,7 +16,6 @@ const Home = ({ articles }: HomeProps): ReactElement => {
           return (
             <span key={article.id}>
               <Link href={`/article/${article.id.split("/thing/")[1]}`}>
-                {/* eslint-disable jsx-a11y/anchor-is-valid */}
                 <a>
                   <HomeArticle
                     image={article.image}

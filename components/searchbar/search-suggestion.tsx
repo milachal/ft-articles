@@ -19,7 +19,7 @@ const SearchSuggestion = ({
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [wrapperRef]);
+  }, [wrapperRef, setShowSuggestions]);
 
   return (
     <div
@@ -33,10 +33,15 @@ const SearchSuggestion = ({
             key={id[1]}
             className={styles.suggestionContainer}
           >
-            {/* eslint-disable jsx-a11y/anchor-is-valid */}
             <Link href={`/article/${id[1]}`}>
               <a>
-                <div className={styles.title} data-testid="title">{suggestion.title}</div>
+                <div
+                  className={styles.title}
+                  data-testid="title"
+                  onClick={() => setShowSuggestions(false)}
+                >
+                  {suggestion.title}
+                </div>
               </a>
             </Link>
             <div className={styles.imageContainer}>

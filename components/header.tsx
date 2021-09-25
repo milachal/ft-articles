@@ -10,7 +10,6 @@ const Header = (): ReactElement => {
         <Search />
       </div>
       <Link href="/">
-        {/* eslint-disable jsx-a11y/anchor-is-valid */}
         <a>
           <div className={styles.logoContainer}>
             <img

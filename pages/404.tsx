@@ -1,8 +1,8 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
+import { ReactElement } from "react";
 import Link from "next/link";
 import styles from "../styles/error-page.module.scss";
 
-const Custom404 = () => {
+const Custom404 = (): ReactElement => {
   return (
     <div className={styles.errorContainer}>
       <h2 className={styles.errorTitle}>Page Not Found </h2>
