@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow, ShallowWrapper } from "enzyme";
-import Header from "../../components/header/header";
+import Header from "../../components/header";
 
 jest.mock("../../components/header/header.module.scss", () => <div />);
 jest.mock("../../components/searchBar/searchBar.module.scss", () => <div />);

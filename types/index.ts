@@ -15,6 +15,7 @@ export interface GetArticleResponse {
   meta: string,
   title: string
   standfirst: string,
+  body: string,
   image: string,
   id: string,
 }
@@ -40,4 +41,8 @@ export interface ArticlePageProps {
     image: string,
     id: string
   }
+}
+
+export interface QueryContext {
+  curations: string[]
 }

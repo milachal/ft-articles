@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
-import styles from "./home-article.module.scss";
-import { HomeArticleProps } from "../../types";
+import styles from "../styles/home-article.module.scss";
+import { HomeArticleProps } from "../types";
 
 const HomeArticle = ({
   meta, title, image, standfirst
