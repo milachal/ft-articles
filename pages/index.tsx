@@ -1,17 +1,17 @@
 import React, { ReactElement } from "react";
 import { GetServerSideProps, GetServerSidePropsResult } from "next";
 import Link from "next/link";
-import styles from "../styles/home.module.scss";
 import { getArticlesData } from "../utils";
 import Header from "../components/header";
 import HomeArticle from "../components/home-article";
 import { HomeProps, GetArticleResponse } from "../types";
 
 const Home = ({ articles }: HomeProps): ReactElement => {
+  const classNamePrefix = "home-page-article-container";
   return (
     <>
       <Header />
-      <div className={styles.homePageArticleContainer}>
+      <div className={classNamePrefix}>
         {articles.map((article: GetArticleResponse) => {
           return (
             <span key={article.id}>

@@ -1,16 +1,19 @@
 import { ReactElement } from "react";
 import Link from "next/link";
-import styles from "../styles/error-page.module.scss";
 
 const Custom404 = (): ReactElement => {
+  const classNamePrefix = "error-page-container";
+
   return (
-    <div className={styles.errorContainer}>
-      <h2 className={styles.errorTitle}>Page Not Found </h2>
-      <p>Sorry, we could not find the page you were looking for.</p>
+    <div className={classNamePrefix}>
+      <h2 className={`${classNamePrefix}__error-title`}>Page Not Found </h2>
+      <p className={`${classNamePrefix}__error-message`}>
+        Sorry, we could not find the page you were looking for.
+      </p>
       <p>
         Go back&nbsp;
         <Link href="/">
-          <a className={styles.link}>home</a>
+          <a className={`${classNamePrefix}__link`}>home</a>
         </Link>
       </p>
     </div>

@@ -3,7 +3,6 @@ import React, {
 } from "react";
 import debounce from "lodash.debounce";
 import axios from "axios";
-import styles from "../../styles/searchBar.module.scss";
 import { GetArticleResponse } from "../../types";
 import SearchSuggestion from "./search-suggestion";
 
@@ -40,7 +39,7 @@ const Search = (): ReactElement => {
   return (
     <div>
       <input
-        className={styles.search}
+        className="search"
         placeholder="search..."
         onChange={onChangeHandler}
         value={query}

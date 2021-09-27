@@ -1,6 +1,5 @@
 import React, { ReactElement, useEffect, useRef } from "react";
 import Link from "next/link";
-import styles from "../../styles/search-suggestion.module.scss";
 import { SuggestionsProps, GetArticleResponse } from "../../types";
 
 const SearchSuggestion = ({
@@ -9,6 +8,7 @@ const SearchSuggestion = ({
   setQuery
 }: SuggestionsProps): ReactElement => {
   const wrapperRef = useRef<HTMLDivElement>(null);
+  const classNamePrefix = "suggestions-container";
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -29,7 +29,7 @@ const SearchSuggestion = ({
 
   return (
     <div
-      className={styles.suggestionsContainer}
+      className={classNamePrefix}
       ref={wrapperRef}
     >
       {suggestions?.map((suggestion: GetArticleResponse) => {
@@ -37,12 +37,12 @@ const SearchSuggestion = ({
         return (
           <div
             key={id[1]}
-            className={styles.suggestionContainer}
+            className={`${classNamePrefix}__suggestion`}
           >
             <Link href={`/article/${id[1]}`}>
               <a>
                 <div
-                  className={styles.title}
+                  className={`${classNamePrefix}__title`}
                   data-testid="title"
                   onClick={onClickHandler}
                 >
@@ -50,9 +50,9 @@ const SearchSuggestion = ({
                 </div>
               </a>
             </Link>
-            <div className={styles.imageContainer}>
+            <div className={`${classNamePrefix}__image-wrapper`}>
               <img
-                className={styles.image}
+                className={`${classNamePrefix}__image`}
                 data-testid="image"
                 src={suggestion.image}
                 alt="article"
