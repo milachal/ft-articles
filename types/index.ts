@@ -22,7 +22,8 @@ export interface GetArticleResponse {
 
 export interface SuggestionsProps {
   suggestions: GetArticleResponse[],
-  setShowSuggestions: Dispatch<SetStateAction<boolean>>
+  setShowSuggestions: Dispatch<SetStateAction<boolean>>,
+  setQuery: Dispatch<SetStateAction<string>>
 }
 
 export interface SuggestionResult {
