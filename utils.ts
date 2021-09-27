@@ -1,7 +1,6 @@
 /* eslint-disable no-return-await */
-import { ResponseType } from "axios";
 import instance from "./axiosInstance";
-import { GetArticleResponse, QueryContext } from "./types";
+import { GetArticleResponse, QueryContext, SuggestionResult } from "./types";
 
 export const getArticleData = async (id: string): Promise<GetArticleResponse> => {
   const response = await instance.get(
@@ -20,7 +19,7 @@ export const getArticleData = async (id: string): Promise<GetArticleResponse> =>
 
 export const getSearchSuggestionsData = async (
   queryString: string, queryContext: QueryContext
-): Promise<ResponseType> => {
+): Promise<SuggestionResult[]> => {
   const response = await instance.post(
     `content/search/v1?apiKey=${process.env.FT_API_KEY}`, {
       queryString,
