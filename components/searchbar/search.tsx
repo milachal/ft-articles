@@ -49,6 +49,7 @@ const Search = (): ReactElement => {
         <SearchSuggestion
           suggestions={results}
           setShowSuggestions={setShowSuggestions}
+          setQuery={setQuery}
         />
       ) : null}
     </div>

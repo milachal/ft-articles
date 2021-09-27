@@ -5,7 +5,8 @@ import { SuggestionsProps, GetArticleResponse } from "../../types";
 
 const SearchSuggestion = ({
   suggestions,
-  setShowSuggestions
+  setShowSuggestions,
+  setQuery
 }: SuggestionsProps): ReactElement => {
   const wrapperRef = useRef<HTMLDivElement>(null);
 
@@ -20,6 +21,11 @@ const SearchSuggestion = ({
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [wrapperRef, setShowSuggestions]);
+
+  const onClickHandler = () => {
+    setShowSuggestions(false);
+    setQuery("");
+  };
 
   return (
     <div
@@ -38,7 +44,7 @@ const SearchSuggestion = ({
                 <div
                   className={styles.title}
                   data-testid="title"
-                  onClick={() => setShowSuggestions(false)}
+                  onClick={onClickHandler}
                 >
                   {suggestion.title}
                 </div>
