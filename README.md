@@ -24,3 +24,9 @@ Open http://localhost:3000 with your browser.
 
 `yarn test`
 
+### To run eslint:
+
+`yarn eslint`
+
+
+
