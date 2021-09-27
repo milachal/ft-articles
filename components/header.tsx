@@ -12,6 +12,7 @@ const Header = (): ReactElement => {
       <Link href="/">
         <a>
           <div className={styles.logoContainer}>
+            {/* eslint-disable max-len */}
             <img
               src="https://www.ft.com/__origami/service/image/v2/images/raw/ftlogo:brand-ft-masthead?format=svg&source=page-kit-layout&tint=%2333302E%2C%2333302E"
               alt="financial-times-logo"

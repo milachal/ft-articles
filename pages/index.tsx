@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import { GetServerSideProps } from "next";
+import { GetServerSideProps, GetServerSidePropsResult } from "next";
 import Link from "next/link";
 import styles from "../styles/home.module.scss";
 import { getArticlesData } from "../utils";
@@ -35,7 +35,8 @@ const Home = ({ articles }: HomeProps): ReactElement => {
 
 export default Home;
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps<HomeProps> = async ():
+  Promise<GetServerSidePropsResult<HomeProps>> => {
   try {
     const articleIdsArr: string[] = [
       "14df1206-bdc6-4f1c-870a-e12748e95c31", "737dd635-dba2-49d7-bcdd-34f467b218ea",
@@ -56,13 +57,15 @@ export const getServerSideProps: GetServerSideProps = async () => {
     if (e.response.status === 404) {
       return {
         redirect: {
-          destination: "/404"
+          destination: "/404",
+          permanent: true
         }
       };
     }
     return {
       redirect: {
-        destination: "/unavailable"
+        destination: "/unavailable",
+        permanent: true
       }
     };
   }
