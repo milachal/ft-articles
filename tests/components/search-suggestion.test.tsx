@@ -8,13 +8,15 @@ const initialProps: SuggestionsProps = {
     meta: "meta",
     title: "title",
     standfirst: "standfirst",
+    body: "body",
     image: "url",
     id: "/thing/id"
   }],
-  setShowSuggestions: jest.fn()
+  setShowSuggestions: jest.fn(),
+  setQuery: jest.fn()
 };
 
-jest.mock("../../components/searchBar/search-suggestion.module.scss", () => <div />);
+jest.mock("../../styles/search-suggestion.scss", () => <div />);
 
 describe("SearchSuggestion component", () => {
   const wrapper: ShallowWrapper = shallow(<SearchSuggestion {...initialProps} />);

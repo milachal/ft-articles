@@ -18,7 +18,7 @@ beforeEach(() => {
   );
 });
 
-jest.mock("../../components/home-article/home-article.module.scss", () => <div />);
+jest.mock("../../styles/home-article.scss", () => <div />);
 
 describe("Home article", () => {
   it("should render correctly", () => {

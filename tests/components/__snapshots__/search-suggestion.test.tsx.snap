@@ -1,8 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports["SearchSuggestion component tests if components is rendered correctly 1"] = `
-<div>
+exports[`SearchSuggestion component tests if components is rendered correctly 1`] = `
+<div
+  className="suggestions-container"
+>
   <div
+    className="suggestions-container__suggestion"
     key="id"
   >
     <Link
@@ -10,15 +13,20 @@ exports["SearchSuggestion component tests if components is rendered correctly 1"
     >
       <a>
         <div
+          className="suggestions-container__title"
           data-testid="title"
+          onClick={[Function]}
         >
           title
         </div>
       </a>
     </Link>
-    <div>
+    <div
+      className="suggestions-container__image-wrapper"
+    >
       <img
         alt="article"
+        className="suggestions-container__image"
         data-testid="image"
         src="url"
       />

@@ -1,16 +1,21 @@
-/* eslint-disable  max-len */
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports["Header should render correctly 1"] = `
-<div>
-  <div>
+exports[`Header should render correctly 1`] = `
+<div
+  className="header-container"
+>
+  <div
+    className="header-container__search"
+  >
     <Search />
   </div>
   <Link
     href="/"
   >
     <a>
-      <div>
+      <div
+        className="header-container__logo"
+      >
         <img
           alt="financial-times-logo"
           src="https://www.ft.com/__origami/service/image/v2/images/raw/ftlogo:brand-ft-masthead?format=svg&source=page-kit-layout&tint=%2333302E%2C%2333302E"

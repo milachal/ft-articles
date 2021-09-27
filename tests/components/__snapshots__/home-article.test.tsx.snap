@@ -1,22 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports["Home article should render correctly 1"] = `
-<div>
+exports[`Home article should render correctly 1`] = `
+<div
+  className="home-article-container"
+>
   <img
     alt="article"
+    className="home-article-container__image"
     src="url"
   />
   <div
+    className="home-article-container__meta"
     data-testid="meta"
   >
     meta
   </div>
   <div
+    className="home-article-container__title"
     data-testid="title"
   >
     Some title
   </div>
   <div
+    className="home-article-container__standfirst"
     data-testid="standfirst"
   >
     standfirst

@@ -6,8 +6,8 @@ import Search from "../../components/searchbar/search";
 
 jest.useFakeTimers();
 jest.mock("axios");
-jest.mock("../../components/searchBar/searchBar.module.scss", () => <div />);
-jest.mock("../../components/searchBar/search-suggestion.module.scss", () => <div />);
+jest.mock("../../styles/searchBar.scss", () => <div />);
+jest.mock("../../styles/search-suggestion.scss", () => <div />);
 
 /* eslint-disable max-len */
 const articles = [
