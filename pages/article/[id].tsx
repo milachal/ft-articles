@@ -3,23 +3,23 @@ import {
   GetServerSideProps, GetServerSidePropsContext, GetServerSidePropsResult
 } from "next";
 import { getArticleData } from "../../utils";
-import styles from "../../styles/article-page.module.scss";
 import { ArticlePageProps } from "../../types";
 import Header from "../../components/header";
 
 const ArticlePage = ({ article }: ArticlePageProps): ReactElement => {
+  const classNamePrefix = "article-page-container";
   return (
-    <div>
+    <div className={classNamePrefix}>
       <Header />
-      <div className={styles.imageContainer}>
+      <div className={`${classNamePrefix}__imageContainer`}>
         <img
-          className={styles.image}
+          className={`${classNamePrefix}__image`}
           src={article.image}
           alt="article"
         />
       </div>
-      <div className={styles.title}>{article.title}</div>
-      <div className={styles.body}>
+      <div className={`${classNamePrefix}__title`}>{article.title}</div>
+      <div className={`${classNamePrefix}__body`}>
         <div
           dangerouslySetInnerHTML={{
             __html: article.body

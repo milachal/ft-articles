@@ -1,17 +1,18 @@
 import React, { ReactElement } from "react";
 import Link from "next/link";
-import styles from "../styles/header.module.scss";
 import Search from "./searchbar/search";
 
 const Header = (): ReactElement => {
+  const classNamePrefix = "header-container";
+
   return (
-    <div className={styles.container}>
-      <div className={styles.searchContainer}>
+    <div className={classNamePrefix}>
+      <div className={`${classNamePrefix}__search`}>
         <Search />
       </div>
       <Link href="/">
         <a>
-          <div className={styles.logoContainer}>
+          <div className={`${classNamePrefix}__logo`}>
             {/* eslint-disable max-len */}
             <img
               src="https://www.ft.com/__origami/service/image/v2/images/raw/ftlogo:brand-ft-masthead?format=svg&source=page-kit-layout&tint=%2333302E%2C%2333302E"

@@ -1,0 +1,29 @@
+@use "./styles/variables.scss";
+
+.header-container {
+  height: 70px;
+  padding: 20px 10px;
+  border-bottom: 1px solid variables.$grey2;
+  font-family: variables.$article-font;
+  
+  &__search {
+    float: left;
+    margin-left: 5%;
+    position: relative;
+  }
+  
+  &__logo {
+    display: flex;
+    justify-content: center;
+  
+    img {
+      width: 350px;
+      margin-left: -175px;
+  
+      @media screen and (max-width: variables.$bpTablet) {
+        margin-left: 0;
+      }
+    }
+  }
+}
+

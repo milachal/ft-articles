@@ -1,14 +1,15 @@
 import { ReactElement } from "react";
-import styles from "../styles/unavailable-error.module.scss";
 
 const PageUnavailable = (): ReactElement => {
+  const classNamePrefix = "error-page-container";
+
   return (
-    <div className={styles.errorContainer}>
-      <h2 className={styles.errorTitle}>Temporary unavailable</h2>
-      <p className={styles.errorMessage}>
+    <div className={classNamePrefix}>
+      <h2 className={`${classNamePrefix}__error-title`}>Temporary unavailable</h2>
+      <p className={`${classNamePrefix}__error-message`}>
         Sorry, the page you&apos;re trying to reach is currentlly unavailable.
       </p>
-      <p className={styles.errorMessage}>Please, try again later.</p>
+      <p className={`${classNamePrefix}__error-message`}>Please, try again later.</p>
     </div>
   );
 };

@@ -1,0 +1,21 @@
+@use '../styles/variables.scss';
+
+.error-page-container {
+  margin: 30px;
+  font: variables.$article-font;
+
+  &__error-title {
+    color: variables.$meta-red;
+  }
+
+  &__error-message {
+    color: variables.$grey3;
+  }
+
+  &__link {
+    color: variables.$meta-red;
+    &:hover {
+      opacity: 0.4;
+    }
+  }
+}

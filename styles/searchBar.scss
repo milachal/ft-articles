@@ -35,18 +35,3 @@
     margin-right: 10px;
   }
 }
-
-.button {
-  border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  text-transform: uppercase;
-  background-color: variables.$grey3;
-  color: variables.$white;
-  margin-left: 10px;
-
-  &:hover {
-    opacity: 0.8;
-  }
-}
-
