@@ -1,5 +1,7 @@
 import React, { ReactElement } from "react";
-import { GetServerSideProps, GetServerSidePropsContext } from "next";
+import {
+  GetServerSideProps, GetServerSidePropsContext, GetServerSidePropsResult
+} from "next";
 import { getArticleData } from "../../utils";
 import styles from "../../styles/article-page.module.scss";
 import { ArticlePageProps } from "../../types";
@@ -31,9 +33,12 @@ const ArticlePage = ({ article }: ArticlePageProps): ReactElement => {
 export default ArticlePage;
 
 export const getServerSideProps:
-  GetServerSideProps = async (context: GetServerSidePropsContext) => {
+  GetServerSideProps<ArticlePageProps> = async (
+    context: GetServerSidePropsContext
+  ): Promise<GetServerSidePropsResult<ArticlePageProps>> => {
     try {
-      const article = await getArticleData(context?.params?.id);
+      const { id } = context.query;
+      const article = await getArticleData(id as string);
 
       return (
         {
@@ -46,13 +51,15 @@ export const getServerSideProps:
       if (e.response.status === 404) {
         return {
           redirect: {
-            destination: "/404"
+            destination: "/404",
+            permanent: true
           }
         };
       }
       return {
         redirect: {
-          destination: "/unavailable"
+          destination: "/unavailable",
+          permanent: true
         }
       };
     }

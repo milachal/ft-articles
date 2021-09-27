@@ -9,11 +9,12 @@ jest.mock("axios");
 jest.mock("../../components/searchBar/searchBar.module.scss", () => <div />);
 jest.mock("../../components/searchBar/search-suggestion.module.scss", () => <div />);
 
+/* eslint-disable max-len */
 const articles = [
   {
     meta: "European Union",
     title: "Gulf states caught between US and China",
-    standfirst: "Countries like Saudi Arabia and UAE struggle to balance relations between Washington and Beijing",
+    standfirst: "Countries like Saudi Arabia struggle to balance relations with Washington",
     image: "https://d1e00ek4ebabms.cloudfront.net/production/a3022009-3565-4933-9f7e-61f4625a3cdf.jpg",
     id: "http://www.ft.com/thing/bde35a2f-ae3f-4fc5-920f-a6bca45d9eb3"
   }
