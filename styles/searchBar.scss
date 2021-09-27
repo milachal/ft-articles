@@ -7,31 +7,20 @@
   font-family: variables.$article-font;
   color: variables.$grey;
   padding: 5px;
-  width: 100px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
+  width: 200px;
 
   &:focus {
     outline: none;
     border-bottom: 1px solid variables.$meta-red;
-    width: 200px;
-  }
-
-  ::placeholder {
-    color: variables.$grey2; //doesnt work
   }
 
   @media screen and (max-width: variables.$bpTablet) {
-    width: 80px;
-
-    &:focus {
-      width: 150px;
-      margin-right: 10px;
-    }
+    width: 150px;
+    margin-right: 10px;
   }
 
   @media screen and (max-width: variables.$bpMobile) {
-    width: 50px;
+    width: 80px;
     margin-right: 10px;
   }
 }
