@@ -13,17 +13,19 @@
     font-family: variables.$article-font;
     font-size: variables.$font-size2;
     line-height: variables.$line-height2;
-    color: variables.$meta-red;
+    color: variables.$meta-red; 
+    margin: 5px 0 5px 0;
   }
   
   &__title {
     font-family: variables.$title-font;
     font-size: variables.$font-size3;
     line-height: variables.$line-height3;
-    color: variables.$black;
+    color: variables.$grey3;
     margin-top: 0;
     margin-bottom: 0;
-    font-weight: 400;
+    font-weight: 600;
+    margin: 5px 0 8px 0;
   }
   
   &__image {
@@ -31,7 +33,6 @@
   }
   
   &__standfirst {
-    margin-top: 10px;
     font-size: variables.$font-size2;
     line-height: variables.$line-height2;
     color: variables.$grey;

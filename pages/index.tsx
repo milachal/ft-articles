@@ -43,7 +43,9 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async ():
       "4935b205-8344-465a-8edf-dc23ec990302", "8cef8c70-5d02-4762-9100-2d92d0c761a0",
       "4ddf4b5b-3267-41b2-ad04-8f4e77783a5c", "dd164b26-90ad-4466-9e47-886224384533",
       "36cdd5d2-18af-4745-88e8-b101fd4cab3f", "a2901ce8-5eb7-4633-b89c-cbdf5b386938",
-      "ac5e5ef8-bccb-482b-9f8d-0dab5cac6f9a", "1db3d119-ac9f-4948-b43b-29bb136eb2d5"
+      "ac5e5ef8-bccb-482b-9f8d-0dab5cac6f9a", "1db3d119-ac9f-4948-b43b-29bb136eb2d5",
+      "de7669b5-da22-4fe1-bf33-a11eb50885d6", "f1b37340-fe64-4a93-a1a2-bac4013c1d5c",
+      "1770b0f8-3740-45db-a032-eedfdb0f8920", "8cea01d2-362a-4c5b-8291-1d27b448ef01"
     ];
 
     const articles = await getArticlesData(undefined, undefined, articleIdsArr);
