@@ -52,7 +52,6 @@ const SearchSuggestion = ({
             </Link>
             <div className={`${classNamePrefix}__image-wrapper`}>
               <img
-                className={`${classNamePrefix}__image`}
                 data-testid="image"
                 src={suggestion.image}
                 alt="article"

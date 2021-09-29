@@ -13,14 +13,4 @@
     outline: none;
     border-bottom: 1px solid variables.$meta-red;
   }
-
-  @media screen and (max-width: variables.$bpTablet) {
-    width: 150px;
-    margin-right: 10px;
-  }
-
-  @media screen and (max-width: variables.$bpMobile) {
-    width: 80px;
-    margin-right: 10px;
-  }
 }
