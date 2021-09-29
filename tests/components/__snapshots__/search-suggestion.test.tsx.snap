@@ -26,7 +26,6 @@ exports[`SearchSuggestion component tests if components is rendered correctly 1`
     >
       <img
         alt="article"
-        className="suggestions-container__image"
         data-testid="image"
         src="url"
       />
