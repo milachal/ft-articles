@@ -7,7 +7,6 @@
   font-family: variables.$article-font;
   font-size: variables.$font-size1;
   line-height: variables.$line-height1;
-  margin-bottom: 16px;
   
   &__meta {
     font-family: variables.$article-font;
@@ -36,5 +35,13 @@
     font-size: variables.$font-size2;
     line-height: variables.$line-height2;
     color: variables.$grey;
+  }
+
+  @media screen and (max-width: variables.$bpTablet) {
+    width: 300px;
+  }
+
+  @media screen and (max-width: variables.$bpTabletSm) {
+    width: 100%;
   }
 }
